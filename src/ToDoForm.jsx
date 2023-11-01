@@ -3,18 +3,31 @@ import {
     StyleSheet,
     View,
     TextInput,
-    Button
+    Button, Alert
   } from 'react-native';
 
-function ToDoForm() {
+function ToDoForm({onAddTask}) {
+  const [taskTest, setTaskText] = React.useState('');
+
+ {/*} if(taskTest.trim() === '') {
+    Alert.alert('Task cannot be empty', 'Please enter a task',[
+      {text: 'Understood', style: 'cancel'}
+    ]);
+  }
+
+  onAddTask(taskTest);
+
+setTaskText(''); */}
   return(
     <>
         <View style={styles.form}>
         <TextInput
           style={styles.input}
           placeholder="Add a new task..."
+          onChangeText={(text) => setTaskText(text)}
+          value={taskTest}
         />
-        <Button title="Add" />
+        <Button title="Add" onPress={() => onAddTask(taskTest)}/>
       </View>
     </>
 
