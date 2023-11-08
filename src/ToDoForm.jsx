@@ -8,16 +8,7 @@ import {
 
 function ToDoForm({onAddTask}) {
   const [taskTest, setTaskText] = React.useState('');
-
- {/*} if(taskTest.trim() === '') {
-    Alert.alert('Task cannot be empty', 'Please enter a task',[
-      {text: 'Understood', style: 'cancel'}
-    ]);
-  }
-
-  onAddTask(taskTest);
-
-setTaskText(''); */}
+  
   return(
     <>
         <View style={styles.form}>
