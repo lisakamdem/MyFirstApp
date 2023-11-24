@@ -41,6 +41,7 @@ function Home({ navigation}) {
             <ToDoList tasks={tasks} markTaskAsCompleted={markTaskAsCompleted} completedTasks={completedTasks} />
             <ToDoForm onAddTask={handleAddTask} />
             <Button title='Go to about' onPress={() => navigation.navigate('About')}/>
+            <Button title='Go to Disney' onPress={() => navigation.navigate('Disney')}/>
         </SafeAreaView>
     </>
   );

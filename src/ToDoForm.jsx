@@ -1,4 +1,5 @@
-import React from 'react';
+'use client';
+import React, { useEffect } from 'react';
 import {
     StyleSheet,
     View,
@@ -8,7 +9,17 @@ import {
 
 function ToDoForm({onAddTask}) {
   const [taskTest, setTaskText] = React.useState('');
-  
+
+
+  const handleAddTask = () => {
+    // Pass the current taskTest value to the parent component
+    onAddTask(taskTest);
+
+    // Optionally, clear the input field
+    setTaskText('');
+  };
+
+
   return(
     <>
         <View style={styles.form}>
@@ -18,7 +29,8 @@ function ToDoForm({onAddTask}) {
           onChangeText={(text) => setTaskText(text)}
           value={taskTest}
         />
-        <Button title="Add" onPress={() => onAddTask(taskTest)}/>
+        <Button title="Add" onPress={handleAddTask}/>
+
       </View>
     </>
 
